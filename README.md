@@ -1,40 +1,23 @@
 # Sitio Cliente 3
 
-Base inicial del sitio con Next.js + TypeScript y PostgreSQL.
+Base de sitio web con acceso a PostgreSQL y una ruta de verificación de conectividad.
 
-## Base de datos
+## Tecnologías
 
-La aplicación usa exclusivamente la variable de entorno `DATABASE_URL` para conectarse a PostgreSQL. Las credenciales reales no se guardan en GitHub.
+Next.js, TypeScript, PostgreSQL.
 
-Variables esperadas:
+## Cómo empezar
 
-```env
-DATABASE_URL=postgresql://USER:PASSWORD@HOST:5432/DATABASE
-DATABASE_SSL=false
-```
+Configura `DATABASE_URL` en el entorno (y `DATABASE_SSL` cuando corresponda), ejecuta `npm install` y `npm run dev`. Comprueba `/api/db/health`.
 
-## Comprobación de conexión
+Repositorio: https://github.com/jm181987/sitio-cliente-3
 
-Con la aplicación desplegada y `DATABASE_URL` configurada, visita:
+## Mantenimiento y seguridad
 
-```text
-/api/db/health
-```
+- Comprueba los requisitos y scripts disponibles antes de desplegar.
+- No publiques claves, tokens, contraseñas ni archivos de entorno.
+- Documenta los cambios y los problemas reproducibles mediante issues o pull requests.
 
-Una conexión correcta devuelve `ok: true` y `database: connected`.
+## Créditos
 
-## Desarrollo
-
-```bash
-npm install
-npm run dev
-```
-
-## Estructura
-
-- `src/lib/db.ts`: pool PostgreSQL compartido.
-- `app/api/db/health/route.ts`: verificación de conectividad.
-- `.env.example`: plantilla segura de variables.
-- `.gitignore`: evita subir secretos y archivos locales.
-
-A partir de esta base, las funciones que requieran persistencia deben reutilizar `query()` desde `src/lib/db.ts`.
+Proyecto del repositorio de **KNJ**. [Conoce KNJ](https://www.marketingknj.site/).
